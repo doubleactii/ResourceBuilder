@@ -1,0 +1,27 @@
+{
+  "name": "resource-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resource-builder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:rollup": "npx rollup -c",
+    "build:dist": "npm run build:rollup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.14.1",
+    "rollup-plugin-banner2": "^1.2.3",
+    "rollup-plugin-cleandir": "^2.0.0",
+    "rollup-plugin-replace": "^2.2.0"
+  }
+}
