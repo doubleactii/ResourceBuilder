@@ -25,17 +25,14 @@ const banner = [
  * @returns {Object[]} An array of output configurations.
  */
 const generateOutputConfigs = (pMinify) => {
-  const outputFormats = ['iife', 'es', 'cjs'];
+  const outputFormats = ['cjs'];
 
   return outputFormats.map((pFormat) => {
     const isMinified = pMinify ? '.min' : '';
-    const isCJS = pFormat === 'cjs' ? '.cjs': '';
-    const fileExtension = pFormat === 'es' ? 'mjs' : 'js';
-	// Uppercase library name for global IIFE represeting this bindle. [LibraryNameBundle].bundleInstance.foo
-	const iifeName = pFormat === 'iife' ? `ResourceBuilderBundle` : undefined;
+    const fileExtension = 'js';
 
     return {
-      file: `dist/${pFormat}/${fileName}${isCJS}${isMinified}.${fileExtension}`,
+      file: `dist/${pFormat}/${fileName}${isMinified}.${fileExtension}`,
       format: pFormat,
       name: pFormat === 'iife' ? iifeName : undefined,
       sourcemap: true,
@@ -43,13 +40,10 @@ const generateOutputConfigs = (pMinify) => {
       plugins: pMinify
         ? [
             terser({
-              mangle: {
-                // Exclude the bundle name from mangling
-                reserved: iifeName ? [iifeName] : [],
-              },
-              module: iifeName ? false : true,
-              toplevel: iifeName ? false : true,
-              keep_classnames: iifeName ? false : true,
+              mangle: true,
+              module: true,
+              toplevel: true,
+              keep_classnames: true,
               format: {
                 comments: 'some',
                 preamble: banner,
@@ -75,7 +69,9 @@ const config = {
     // Replace version in source with package.json version
     replace({ ['VERSION_REPLACE_ME']: packageJson.version }),
     commonjs(),
-    resolve()
+    resolve(),
+    // Transpile ES6 to ES5 (CommonJS)
+    babel({ babelHelpers: 'bundled' })
   ],
 };
 
