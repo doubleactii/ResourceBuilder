@@ -1,0 +1,61 @@
+{
+    "elements": [
+        {
+            "type": "Interface/SharkBate/TitleMenu/Background",
+            "name": "background",
+            "xPos": 0,
+            "yPos": 0,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/Reference",
+            "name": "reference",
+            "xPos": 0,
+            "yPos": 0,
+            "isHidden": 1,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/Shark",
+            "name": "shark",
+            "xPos": 119,
+            "yPos": 16,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/GreenFish",
+            "name": "greenfish",
+            "xPos": 4.5,
+            "yPos": 166,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/BlueFish",
+            "name": "bluefish",
+            "xPos": 14,
+            "yPos": 42,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/PinkFish",
+            "name": "pinkfish",
+            "xPos": 584,
+            "yPos": 51,
+            "text": ""
+        },
+        {
+            "type": "Interface/SharkBate/TitleMenu/Bate",
+            "name": "bate",
+            "xPos": 276,
+            "yPos": 284,
+            "text": ""
+        },
+        {
+            "type": "WebBox/SharkBate/TitleMenu/ContinueText",
+            "name": "continuetext",
+            "xPos": 175,
+            "yPos": 323,
+            "text": ""
+        }
+    ]
+}

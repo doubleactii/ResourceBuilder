@@ -1,0 +1,44 @@
+{
+	"elements": [
+		{
+			"type": "Interface/SharkBate/MainMenu/Buttons/Shop",
+			"name": "shop",
+			"xPos": 7,
+			"yPos": 7,
+			"isHidden": 0,
+			"text": ""
+		},
+		{
+			"type": "Interface/SharkBate/MainMenu/Buttons/Modes/Survival",
+			"name": "survival",
+			"xPos": 7,
+			"yPos": 172,
+			"isHidden": 0,
+			"text": ""
+		},
+		{
+			"type": "Interface/SharkBate/MainMenu/Buttons/Volume",
+			"name": "volume",
+			"xPos": 57,
+			"yPos": 7,
+			"isHidden": 0,
+			"text": ""
+		},
+		{
+			"type": "Interface/SharkBate/MainMenu/Buttons/Vibration",
+			"name": "vibration",
+			"xPos": 107,
+			"yPos": 7,
+			"isHidden": 1,
+			"text": ""
+		},
+		{
+			"type": "Interface/SharkBate/MainMenu/Hook",
+			"name": "hook",
+			"xPos": 311,
+			"yPos": -220,
+			"isHidden": 0,
+			"text": ""
+		}
+	]
+}

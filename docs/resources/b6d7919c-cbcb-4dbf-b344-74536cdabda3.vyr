@@ -1,0 +1,12 @@
+{
+    "elements": [
+        {
+            "type": "Interface/SharkBate/Displays/CoinDisplay",
+            "name": "coindisplay",
+            "xPos": 184,
+            "yPos": 0,
+            "isHidden": 0,
+            "text": ""
+        }
+    ]
+}

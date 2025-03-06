@@ -1,0 +1,331 @@
+#shop-container {
+    width: max-content;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    gap: 25px;
+}
+
+.center-text {
+    margin: auto;
+    text-align: center;
+}
+
+.shop-title {
+    font-family: 'LilitaOne';
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(9, 18, 24, 0.5);
+    border-radius: 8px 8px 0px 0px;
+}
+
+.shop-flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    /* justify-content: space-evenly; */
+    gap: 3px;
+}
+
+.chest-container, .powerup-container {
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #000;
+    /* Performance heavy on some devices */
+    /* backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); */
+    padding-bottom: 15px;
+    /* padding-right: 4px; */
+}
+
+.chest-container {
+    background-color: rgba(253, 190, 19, 0.9);
+}
+
+.powerup-container {
+    background-color: rgba(5, 122, 203, 0.8);
+}
+
+/* Game */
+
+.flip-card { 
+    font-family: 'LilitaOne';
+    width: 160px;
+    height: 200px;
+    min-width: 160px;
+    min-height: 200px;
+    max-width: 160px;
+    max-height: 200px;
+    perspective: 1000px;
+    padding: 0px 10px;
+    transition: transform 200ms ease-out
+}
+
+/* The thing that flips */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 300ms cubic-bezier(0.64, 0.57, 0.67, 1.53); /* Duration */
+    transform-style: preserve-3d;
+    /* Border */
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.flip-card-front-chests, .flip-card-front-powerups, .flip-card-back-chests, .flip-card-back-powerups {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flip-card-front-chests {
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+}
+
+.flip-card-front-powerups {
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+}
+
+.flip-card-back-chests {
+    transform: rotateY(180deg);
+    z-index: 10;
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(254,235,88,1) 0%, rgba(253,190,19,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.flip-card-back-powerups {
+    transform: rotateY(180deg);
+    z-index: 10;
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(1,195,249,1) 0%, rgba(5,101,199,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.card-title-front, .card-title-back-chests, .card-title-back-powerups, .card-back-description, .card-price, .shop-title {
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+.card-title-front, .card-title-back-chests, .card-title-back-powerups {
+    color: #fff;
+    font-family: 'LilitaOne';
+    padding-top: 15px;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.card-title-front {
+    text-align: center;
+    color: #fff;
+}
+
+.chests {
+    color: #fee651;
+}
+.powerups {
+    color: #02baf4;
+}
+
+.card-title-back-chests {
+    color: #fee651;
+    text-align: center;
+}
+
+.card-title-back-powerups {
+    color: #02baf4;
+    text-align: center;
+}
+
+/* Shop Card Image */
+.card-purchase-image {
+    image-rendering: pixelated;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Shop Card Back Description */
+.card-back-description {
+    font-family: 'LilitaOne';
+    color: #fff;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star-image {
+    width: 16px; 
+    height: 16px;
+    pointer-events: none; /* Disable pointer events */
+}
+
+.price-background-chests {
+    background-color: #dda815;
+    border-top: 2px solid #aa8111;
+    top: 154px;
+    height: 42px;
+    pointer-events: none;
+    width: 100%;
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.price-background-powerups {
+    background-color: #0655a6;
+    border-top: 2px solid #043567;
+    top: 154px;
+    height: 42px;
+    pointer-events: none;
+    width: 100%;
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.price-container-powerup {
+    position: relative;
+    top: 14%;
+    pointer-events: none;
+}
+
+.price-container-chest {
+    position: relative;
+    top: 14%;
+    pointer-events: none;
+}
+
+.star-level-container {
+    position: absolute;
+    z-index: 5;
+    top: 63%;
+    width: 100%;
+    pointer-events: none;
+    image-rendering: auto;
+    pointer-events: none; /* Disable pointer events */
+}
+
+/* Shop Card Coin Image */
+.coin-image {
+    image-rendering: auto;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    z-index: 4;
+    top: 4px;
+    pointer-events: none;
+}
+
+.card-price {
+    font-family: 'LilitaOne';
+    color: #fff;
+    font-size: 16px;
+    padding-left: 2px;
+    position: relative;
+    display: inline-block;
+    z-index: 4;
+    top: -11%;
+    pointer-events: none;
+}
+
+/* Info Button */
+.card-info-button {
+    left: 82%;
+    top: 6%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    pointer-events: auto;
+    image-rendering: auto;
+    z-index: 6;
+}
+
+hr {
+    text-align: center;
+    width: 75%;
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.hr-chests {
+    color: #f2a40f;
+}
+
+.hr-powerups {
+    color: #043567;
+}
+
+/* The webbox container that holds the shop container */
+#wb_shop-menu-interface_shopcontainer {
+    top: 20% !important;
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS devices */
+    scroll-behavior: smooth;
+    overflow: auto;
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+    text-size-adjust: none;
+	-webkit-user-select: none;
+    user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-user-callout: none;
+    -webkit-user-drag: none;
+    -webkit-highlight: none;
+    touch-action: pan-x;
+}
+
+#wb_shop-menu-interface_shopcontainer {
+    overflow: scroll !important;
+}
+
+#wb_shop-menu-interface_shopcontainer::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+#wb_shop-menu-interface_shopcontainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #0486d9;
+}
+
+#wb_shop-menu-interface_shopcontainer::-webkit-scrollbar-track {
+    background-color: #1a1e2e;
+    border-radius: 10px;
+}

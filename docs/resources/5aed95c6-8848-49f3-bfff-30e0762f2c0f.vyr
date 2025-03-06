@@ -1,0 +1,21 @@
+{
+    "elements": [
+        {
+            "type": "WebBox/SharkBate/MainMenu/Shop/ShopContainer",
+            "name": "shopcontainer",
+            "xPos": 0,
+            "yPos": 0,
+            "isHidden": 0,
+            "text": "",
+            "atlasName": ""
+        },
+        {
+            "type": "Interface/SharkBate/MainMenu/Shop/ShopBackButton",
+            "name": "shopbackbutton",
+            "xPos": 0,
+            "yPos": 0,
+            "isHidden": 0,
+            "text": ""
+        }
+    ]
+}
